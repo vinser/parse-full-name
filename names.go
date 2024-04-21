@@ -377,10 +377,11 @@ func delimitGluedName(fullName string) string {
 	fullName = strings.Trim(reDelimCamel.ReplaceAllStringFunc(
 		fullName,
 		func(s string) string {
-			if len(s) != 2 {
-				return s
+			r := []rune(s)
+			if len(r) == 2 {
+				return string(r[:1]) + " " + string(r[1:])
 			}
-			return s[:1] + " " + s[1:]
+			return s
 		}), " ")
 	return fullName
 }

@@ -51,6 +51,10 @@ func TestDelimitGluedName(t *testing.T) {
 		expect string
 	}{
 		{ // delimit glued name
+			input:  "ВладимирМихайловичМясоедов",
+			expect: "Владимир Михайлович Мясоедов",
+		},
+		{ // delimit glued name
 			input:  "AbcDefG.(Xyz),Jr",
 			expect: "Abc Def G. (Xyz), Jr",
 		},
